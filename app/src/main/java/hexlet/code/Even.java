@@ -3,11 +3,10 @@ package hexlet.code;
 import static hexlet.code.Utils.generateRandomNumber;
 
 public class Even {
-    public static final int MAX_RANDOM_NUMBER = 100;
     public static void start() {
         String[][] rounds = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (var i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            var randomNumber = generateRandomNumber(1, MAX_RANDOM_NUMBER);
+            var randomNumber = generateRandomNumber(1, Engine.MAX_RANDOM_NUMBER);
             var correctAnswer = isEven(randomNumber) ? "yes" : "no";
             rounds[i][0] = String.valueOf(randomNumber);
             rounds[i][1] = correctAnswer;
