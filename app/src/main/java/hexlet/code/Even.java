@@ -1,30 +1,21 @@
 package hexlet.code;
 
-import java.util.Scanner;
+import static hexlet.code.Utils.generateRandomNumber;
 
 public class Even {
+    public static final int MAX_RANDOM_NUMBER = 100;
     public static void start() {
-        var userName = Cli.greetUser();
-        var streak = 0;
-        while (streak < 3) {
-            var randomNumber = (int) ((Math.random() * (100 - 1)) + 1);
-            System.out.println("Question: " + randomNumber);
-            System.out.print("Your answer: ");
-            Scanner scanner = new Scanner(System.in);
-            String userAnswer = scanner.next().toLowerCase();
-
-            String correctAnswer = randomNumber % 2 == 0 ? "yes" : "no";
-
-            if (userAnswer.equals(correctAnswer)) {
-                System.out.println("Correct!");
-                streak++;
-            }
-            else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
-                System.out.println("Let's try again, " + userName + "!");
-                return;
-            }
+        String[][] rounds = new String[Engine.NUMBER_OF_ROUNDS][2];
+        for (var i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            var randomNumber = generateRandomNumber(1, MAX_RANDOM_NUMBER);
+            var correctAnswer = isEven(randomNumber) ? "yes" : "no";
+            rounds[i][0] = String.valueOf(randomNumber);
+            rounds[i][1] = correctAnswer;
         }
-        System.out.println("Congratulations, " +  userName + "!");
+        var question = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        Engine.start(question, rounds);
+    }
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
