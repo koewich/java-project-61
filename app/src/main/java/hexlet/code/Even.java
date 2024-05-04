@@ -15,7 +15,7 @@ public class Even {
             var randomNumber = (int) ((Math.random() * (100 - 1)) + 1);
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
+            String userAnswer = scanner.next().toLowerCase();
 
             String correctAnswer = randomNumber % 2 == 0 ? "yes" : "no";
 
@@ -26,7 +26,7 @@ public class Even {
             else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
                 System.out.println("Let's try again, " + userName + "!");
-                streak = 0;
+                return;
             }
         }
         System.out.println("Congratulations, " +  userName + "!");
