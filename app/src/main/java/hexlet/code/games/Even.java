@@ -8,7 +8,7 @@ public class Even {
     public static void start() {
         String[][] rounds = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (var i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            var randomNumber = generateRandomNumber(1, Engine.MAX_RANDOM_NUMBER);
+            var randomNumber = generateRandomNumber();
             var correctAnswer = isEven(randomNumber) ? "yes" : "no";
             rounds[i][0] = String.valueOf(randomNumber);
             rounds[i][1] = correctAnswer;

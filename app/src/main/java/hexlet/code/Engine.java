@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
+    public static final int MIN_RANDOM_NUMBER = 1;
     public static final int MAX_RANDOM_NUMBER = 100;
     public static void start(String question, String[][] rounds) {
         var userName = Cli.greetUser();
