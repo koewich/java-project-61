@@ -10,8 +10,8 @@ public class Calc {
     public static void start() {
         String[][] rounds = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (var i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            var firstRandomNumber = generateRandomNumber();
-            var secondRandomNumber = generateRandomNumber();
+            var firstRandomNumber = generateRandomNumber(Engine.MIN_RANDOM_NUMBER, Engine.MAX_RANDOM_NUMBER);
+            var secondRandomNumber = generateRandomNumber(Engine.MIN_RANDOM_NUMBER, Engine.MAX_RANDOM_NUMBER);
             String[] operations = {"+", "-", "*"};
             var rnd = new Random().nextInt(operations.length);
             var randomOperation = operations[rnd];

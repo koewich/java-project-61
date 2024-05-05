@@ -9,8 +9,8 @@ public class GCD {
     public static void start() {
         String[][] rounds = new String[Engine.NUMBER_OF_ROUNDS][2];
         for (var i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            var firstRandomNumber = generateRandomNumber();
-            var secondRandomNumber = generateRandomNumber();
+            var firstRandomNumber = generateRandomNumber(Engine.MIN_RANDOM_NUMBER, Engine.MAX_RANDOM_NUMBER);
+            var secondRandomNumber = generateRandomNumber(Engine.MIN_RANDOM_NUMBER, Engine.MAX_RANDOM_NUMBER);
             var questionString = firstRandomNumber + " " + secondRandomNumber;
             var correctAnswer = findGreatestCommonDivider(firstRandomNumber, secondRandomNumber);
             rounds[i][0] = questionString;
