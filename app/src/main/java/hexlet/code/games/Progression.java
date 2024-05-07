@@ -19,7 +19,7 @@ public class Progression {
             progressionArray[0] = progressionStart;
             for (var j = 0; j < progressionLength; j++) {
                 progressionArray[j] = progressionStart + progressionStep;
-                progressionStart = progressionStart +progressionStep;
+                progressionStart = progressionStart + progressionStep;
                 if (j == hiddenProgressionItemPosition) {
                     progressionString.append(".. ");
                 } else {

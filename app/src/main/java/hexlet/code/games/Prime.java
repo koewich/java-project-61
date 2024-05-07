@@ -17,8 +17,9 @@ public class Prime {
         Engine.start(QUESTION, rounds);
     }
     public static boolean isPrime(int number) {
-        if (number <= 1)
+        if (number <= 1) {
             return false;
+        }
         for (var i = 2; i < number; i++) {
             if (number % i == 0) {
                 return false;
