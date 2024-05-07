@@ -27,12 +27,16 @@ public class App {
                 break;
             case ("3"):
                 Calc.start();
+                break;
             case ("4"):
                 GCD.start();
+                break;
             case ("5"):
                 Progression.start();
+                break;
             case ("6"):
                 Prime.start();
+                break;
             case ("0"):
             default:
                 break;
